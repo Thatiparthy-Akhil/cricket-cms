@@ -1,0 +1,261 @@
+openapi: 3.0.0
+info:
+  title: Cricket CMS API
+  description: API documentation for the Cricket CMS project
+  version: 1.0.0
+
+servers:
+  - url: http://localhost:3000
+    description: Local server
+
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+
+security:
+  - bearerAuth: []
+
+paths:
+  /auth/register:
+    post:
+      summary: Register a new user
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                email:
+                  type: string
+                password:
+                  type: string
+                role:
+                  type: string
+              required:
+                - name
+                - email
+                - password
+                - role
+      responses:
+        '201':
+          description: User registered successfully
+        '409':
+          description: Email already exists
+        '500':
+          description: Error registering user
+
+  /auth/login:
+    post:
+      summary: Log in a user
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                password:
+                  type: string
+              required:
+                - email
+                - password
+      responses:
+        '200':
+          description: User logged in successfully
+        '401':
+          description: Invalid email or password
+        '500':
+          description: Error logging in
+
+  /users:
+    get:
+      summary: Get all users
+      parameters:
+        - name: page
+          in: query
+          schema:
+            type: integer
+          description: Page number
+        - name: limit
+          in: query
+          schema:
+            type: integer
+          description: Number of users per page
+      responses:
+        '200':
+          description: A list of users
+        '500':
+          description: Error fetching users
+
+  /users/{id}:
+    get:
+      summary: Get a user by ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: A user
+        '404':
+          description: User not found
+        '500':
+          description: Error fetching user
+    put:
+      summary: Update a user by ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                email:
+                  type: string
+                role:
+                  type: string
+      responses:
+        '200':
+          description: User updated successfully
+        '404':
+          description: User not found
+        '500':
+          description: Error updating user
+    delete:
+      summary: Delete a user by ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: User deleted successfully
+        '404':
+          description: User not found
+        '500':
+          description: Error deleting user
+
+  /live-scores:
+    get:
+      summary: Get live cricket scores
+      responses:
+        '200':
+          description: A list of live cricket scores
+        '500':
+          description: Error fetching live scores
+
+  /players:
+    get:
+      summary: Get a list of players
+      responses:
+        '200':
+          description: A list of players
+        '500':
+          description: Error fetching players
+
+  /articles:
+    post:
+      summary: Create a new article
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                content:
+                  type: string
+      responses:
+        '201':
+          description: Article created successfully
+        '500':
+          description: Error creating article
+
+    get:
+      summary: Get all articles
+      responses:
+        '200':
+          description: A list of articles
+        '500':
+          description: Error fetching articles
+
+  /articles/{id}:
+    put:
+      summary: Update an article by ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                content:
+                  type: string
+      responses:
+        '200':
+          description: Article updated successfully
+        '404':
+          description: Article not found
+        '500':
+          description: Error updating article
+
+    delete:
+      summary: Delete an article by ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Article deleted successfully
+        '404':
+          description: Article not found
+        '500':
+          description: Error deleting article
+
+  /articles/{id}/like:
+    post:
+      summary: Like an article by ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Article liked successfully
+        '500':
+          description: Error liking article
