@@ -152,23 +152,36 @@ Database Schema Diagram:
 i.	Design Decisions and Justifications:
 Architecture:
  The system adopts a microservices architecture structure because this approach provides both scalability and maintenance capabilities alongside separation of important system components. Both REST and GraphQL APIs function together in the system to give users flexible ways for querying and manipulating data. The system implements REST API for typical CRUD operations yet utilizes GraphQL for executing advanced data retrieval and complex data fetching tasks. The system implements Node.js as its web server because its event-driven structure supports high efficiency during concurrent request operations.
-        Database: 
+
+ Database: 
 MySQL serves as the relational database because of its excellent power combined with its capacity for scale and its ability to handle sophisticated queries and transactions. The schema does include three main tables which comprise users, articles and likes.
+
+
  Integration with Third-Party Services: 
 A third-party cricket scores API through integration will enable the system to obtain real-time scores and updates.
+
+
 ii.	Challenges Encountered and Solutions Implemented:
 API Rate Limiting: The third-party cricket scores API enforces rate limits as a challenge for the system. The system will benefit from two strategies that include API call reduction through caching and rate limiting for request management.
  Scalability: The system encounters difficulties as it needs to adapt to support large quantities of simultaneous users. The application benefits from distributed traffic using load balancers together with horizontal scalability through deploying docker containers.
+
+
+ 
 iii.	Performance Analysis and Optimization Strategies 
 Database Optimization: 
 Database performance improves when indexes are created for fields which are frequently used in database queries. A database analysis determines SQL queries for performance enhancement which decreases overall execution duration.
  Caching: The application uses Redis to perform In-Memory Caching of popular data which decreases database operations and accelerates system responses. 
 Load Testing: Load testing can be performed through JMeter and Locust tools for the purpose of identifying performance bottlenecks. The process of server configuration refinement accompanies code optimization which makes systems handle heavier loads efficiently.
+
+
 iv.	Security Considerations and Implementations
  Authentication and Authorization: JWT: Using JSON Web Tokens (JWT) for secure authentication and authorization of users. The system will use role-based access control (RBAC) methodology for ensuring authorized endpoint access depends on user roles. 
 Data Encryption: The API protects data transmission through HTTPS which delivers encryption services. Users receive secure data protection through REST-based AES encryption for their data when it rests on system storage facilities. 
 
 API Security: We need to deploy rate limiting as a security measure to stop denial-of-service (DoS) attacks and abuse of service. API security implements a process to validate user data entry and apply code sanitization for blocking SQL injection along with other security threats.
+
+
+
 v.	Future Improvements:
 Live Match Videos: Users should have the ability to access live cricket match videos streamed directly on the platform.
  User Chat: The platform must allow users to communicate with each other through live matches to enhance their real-time interaction.
