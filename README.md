@@ -32,8 +32,8 @@ This project is a Cricket CMS API that allows users to register, log in, view ar
    ```env
    ACCESS_TOKEN_SECRET=your_access_token_secret
    DB_HOST=localhost
-   DB_USER=your_mysql_username
-   DB_PASSWORD=your_mysql_password
+   DB_USER=root
+   DB_PASSWORD=root
    DB_NAME=cricket_cms
    ```
 
