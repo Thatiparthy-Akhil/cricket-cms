@@ -101,16 +101,26 @@ i. Rest API endpoints using swagger:
  
 ![Screenshot 2025-03-31 204910](https://github.com/user-attachments/assets/662561e1-2020-40eb-9ce2-21743fa5ce05)
 
- 
+ ![Screenshot 2025-03-31 205111](https://github.com/user-attachments/assets/14344eb8-bf6a-4ff1-bf1d-cffa18b4fe25)
+
 
 Registering new user:
  
- 
+ ![Screenshot 2025-03-31 205226](https://github.com/user-attachments/assets/44889380-f888-4753-9ced-7c14fa139b52)
+
+![Screenshot 2025-03-31 205904](https://github.com/user-attachments/assets/27d339ba-ba79-4c4d-a123-275969292777)
+
+
 new users created successfully.
+![Screenshot 2025-03-31 205935](https://github.com/user-attachments/assets/e4c13809-32e2-492c-b0ce-1438b809d4ce)
 
 
 Login :
- 
+ ![Screenshot 2025-03-31 210544](https://github.com/user-attachments/assets/3a331eda-07cd-476f-86cf-dbd678cadd51)
+
+![Screenshot 2025-03-31 210608](https://github.com/user-attachments/assets/d0511186-2517-4024-bdfa-99274d1032c8)
+
+
 
  
 
@@ -121,15 +131,18 @@ Login :
 Graphql endpoints:
 creating a New Article:
 
- 
+ ![Screenshot 2025-03-31 210840](https://github.com/user-attachments/assets/534b399b-2ed6-40f7-98fe-2f381c0deaf8)
+
 Fetching Live scores:
  
 
+![Screenshot 2025-03-31 210950](https://github.com/user-attachments/assets/336ad603-00a0-41a0-8175-001d6e303040)
 
 
 
 Database Schema Diagram:
  
+![Screenshot 2025-03-31 212611](https://github.com/user-attachments/assets/75dfc62c-85a5-4bd2-b45c-b7c0bb38e848)
 
 
 
