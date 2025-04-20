@@ -1,4 +1,4 @@
-const { gql } = require('graphql-tag');
+const { gql } = require("graphql-tag");
 
 const typeDefs = gql`
   type User {
@@ -25,7 +25,6 @@ const typeDefs = gql`
     date: String!
     dateTimeGMT: String!
     teams: [String!]!
-    score: [Score!]!
     series_id: String!
     fantasyEnabled: Boolean!
     bbbEnabled: Boolean!
@@ -54,22 +53,20 @@ const typeDefs = gql`
     article(id: ID!): Article
     liveScores: [LiveScore]
     players: [Player]
-    homePageData: HomePageData
   }
 
   type Mutation {
-    register(name: String!, email: String!, password: String!, role: String!): User
+    register(
+      name: String!
+      email: String!
+      password: String!
+      role: String!
+    ): User
     login(email: String!, password: String!): String
     createArticle(title: String!, content: String!, userId: ID!): Article
     updateArticle(id: ID!, title: String!, content: String!): Article
     deleteArticle(id: ID!): Boolean
     likeArticle(articleId: ID!): Boolean
-  }
-
-  type HomePageData {
-    articles: [Article]
-    liveScores: [LiveScore]
-    players: [Player]
   }
 `;
 
