@@ -3,7 +3,10 @@ const bodyParser = require("body-parser");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
 require("dotenv").config();
+<<<<<<< HEAD
 const cors = require("cors"); // Import CORS middleware
+=======
+>>>>>>> b445d2d08b7f3c24020cff077d09aa9444265d71
 const { fetchLiveScores, fetchPlayers, getUserData } = require("./services");
 const { registerUser, getUserByEmail, getAllUsers } = require("./models/user");
 const {
@@ -25,6 +28,7 @@ const port = 3000;
 // Middleware to parse JSON bodies
 app.use(bodyParser.json());
 
+<<<<<<< HEAD
 // Enable CORS for all origins (for development purposes)
 app.use(cors());
 
@@ -33,6 +37,13 @@ const swaggerUi = require("swagger-ui-express");
 const YAML = require("yamljs");
 const swaggerDocument = YAML.load("./openapi.yaml");
 
+=======
+// Swagger UI setup
+const swaggerUi = require("swagger-ui-express");
+const YAML = require("yamljs");
+const swaggerDocument = YAML.load("./openapi.yaml");
+
+>>>>>>> b445d2d08b7f3c24020cff077d09aa9444265d71
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 // Simple root route to test if the server is running
