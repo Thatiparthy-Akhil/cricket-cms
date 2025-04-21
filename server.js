@@ -4,7 +4,9 @@ const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
 require("dotenv").config();
 const cors = require("cors"); // Import CORS middleware
-const { fetchLiveScores, fetchPlayers, getUserData } = require("./services");
+const { fetchLiveScores, fetchPlayers } = require("./services/articleService");
+const { getUserData } = require("./services");
+
 const { registerUser, getUserByEmail, getAllUsers } = require("./models/user");
 const {
   createArticle,
