@@ -2,10 +2,22 @@ const mysql = require("mysql");
 
 const pool = mysql.createPool({
   connectionLimit: 10,
-  host: "localhost",
-  user: "Akhil1",
-  password: "Akhil1",
-  database: "cricket_cms",
+  host: "akhilmysqlserver.mysql.database.azure.com", // ✅ your Azure server hostname
+  user: "akhiladmin", // ✅ full user format required by Azure
+  password: "cricket@1", // 🔑 use the one you set while creating the server
+  database: "cricket_cms", // ✅ database you created earlier
+  ssl: {
+    rejectUnauthorized: true, // ✅ required for secure Azure connection
+  },
+});
+
+pool.getConnection((err, conn) => {
+  if (err) {
+    console.error("MySQL Connection Failed:", err);
+  } else {
+    console.log("✅ Connected to Azure MySQL successfully!");
+    conn.release();
+  }
 });
 
 module.exports = pool;
