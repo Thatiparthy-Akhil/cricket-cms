@@ -31,7 +31,9 @@ app.use(cors());
 // Swagger UI setup
 const swaggerUi = require("swagger-ui-express");
 const YAML = require("yamljs");
-const swaggerDocument = YAML.load("./openapi.yaml");
+const path = require("path");
+
+const swaggerDocument = YAML.load(path.join(__dirname, "openapi.yaml")); // ✅ Corrected path
 
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
@@ -284,3 +286,5 @@ app.post("/articles/:id/like", authenticateToken, async (req, res) => {
 app.listen(port, () => {
   console.log(`Server running on http://localhost:${port}`);
 });
+
+console.log("✅ Swagger loaded at /api-docs");
