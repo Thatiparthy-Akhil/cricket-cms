@@ -1,5 +1,5 @@
 const mysql = require("mysql");
-
+require("dotenv").config();
 const pool = mysql.createPool({
   connectionLimit: 10,
   host: "akhilmysqlserver.mysql.database.azure.com", // ✅ your Azure server hostname
