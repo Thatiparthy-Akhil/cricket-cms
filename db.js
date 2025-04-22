@@ -6,8 +6,29 @@
 //   user: "akhiladmin", // ✅ full user format required by Azure
 //   password: "cricket@1", // 🔑 use the one you set while creating the server
 //   database: "cricket_cms", // ✅ database you created earlier
+
+// });
+
+// pool.getConnection((err, conn) => {
+//   if (err) {
+//     console.error("MySQL Connection Failed:", err);
+//   } else {
+//     console.log("✅ Connected to Azure MySQL successfully!");
+//     conn.release();
+//   }
+// });
+
+// const mysql = require("mysql");
+// require("dotenv").config(); // Load env values
+
+// const pool = mysql.createPool({
+//   connectionLimit: 10,
+//   host: process.env.DB_HOST,
+//   user: process.env.DB_USER,
+//   password: process.env.DB_PASSWORD,
+//   database: process.env.DB_NAME,
 //   ssl: {
-//     rejectUnauthorized: true, // ✅ required for secure Azure connection
+//     rejectUnauthorized: true, // 🔐 Required for Azure MySQL
 //   },
 // });
 
@@ -21,26 +42,13 @@
 // });
 
 const mysql = require("mysql");
-require("dotenv").config(); // Load env values
 
 const pool = mysql.createPool({
   connectionLimit: 10,
-  host: process.env.DB_HOST,
-  user: process.env.DB_USER,
-  password: process.env.DB_PASSWORD,
-  database: process.env.DB_NAME,
-  ssl: {
-    rejectUnauthorized: true, // 🔐 Required for Azure MySQL
-  },
-});
-
-pool.getConnection((err, conn) => {
-  if (err) {
-    console.error("MySQL Connection Failed:", err);
-  } else {
-    console.log("✅ Connected to Azure MySQL successfully!");
-    conn.release();
-  }
+  host: "localhost",
+  user: "Akhil1",
+  password: "Akhil1",
+  database: "cricket_cms",
 });
 
 module.exports = pool;

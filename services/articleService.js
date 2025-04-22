@@ -5,8 +5,9 @@ const axios = require("axios");
 async function fetchLiveScores() {
   try {
     const response = await axios.get(
-      "https://api.cricapi.com/v1/currentMatches?apikey=65d57f73-0a3a-47d5-88fc-fc8390a378c9&offset=0"
+      "https://api.cricapi.com/v1/currentMatches?apikey=1918ad5e-2eea-4641-a152-9af8df2644ba&offset=0"
     );
+
     return response.data.data; // Ensure that the function returns an array of live scores
   } catch (error) {
     console.error(
@@ -22,7 +23,7 @@ async function fetchLiveScores() {
 async function fetchPlayers() {
   try {
     const response = await axios.get(
-      "https://api.cricapi.com/v1/players?apikey=65d57f73-0a3a-47d5-88fc-fc8390a378c9&offset=0"
+      "https://api.cricapi.com/v1/players?apikey=1918ad5e-2eea-4641-a152-9af8df2644ba&offset=0"
     );
     return response.data.data; // Ensure that the function returns an array of players
   } catch (error) {
