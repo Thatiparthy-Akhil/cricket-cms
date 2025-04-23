@@ -1,5 +1,5 @@
 const axios = require("axios");
-const mysql = require("mysql2/promise");
+// const mysql = require("mysql2/promise");
 require("dotenv").config(); // ✅ Load from .env
 
 // const pool = mysql.createPool({
@@ -12,13 +12,13 @@ require("dotenv").config(); // ✅ Load from .env
 //   },
 // });
 
-const pool = mysql.createPool({
-  connectionLimit: 10,
-  host: "localhost",
-  user: "Akhil1",
-  password: "Akhil1",
-  database: "cricket_cms",
-});
+// const pool = mysql.createPool({
+//   connectionLimit: 10,
+//   host: "localhost",
+//   user: "Akhil1",
+//   password: "Akhil1",
+//   database: "cricket_cms",
+// });
 
 // Function to fetch live scores from CricAPI
 async function fetchLiveScores() {

@@ -41,14 +41,36 @@
 //   }
 // });
 
-const mysql = require("mysql");
+// const mysql = require("mysql");
+
+// const pool = mysql.createPool({
+//   connectionLimit: 10,
+//   host: "localhost",
+//   user: "Akhil1",
+//   password: "Akhil1",
+//   database: "cricket_cms",
+// });
+
+// module.exports = pool;
+
+const mysql = require("mysql2");
 
 const pool = mysql.createPool({
   connectionLimit: 10,
-  host: "localhost",
-  user: "Akhil1",
-  password: "Akhil1",
-  database: "cricket_cms",
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME,
+  port: process.env.DB_PORT,
+});
+
+pool.getConnection((err, connection) => {
+  if (err) {
+    console.error(" MySQL connection failed:", err.message);
+  } else {
+    console.log(" MySQL connected successfully");
+    connection.release();
+  }
 });
 
 module.exports = pool;

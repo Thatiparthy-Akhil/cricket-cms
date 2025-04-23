@@ -1,10 +1,10 @@
-const pool = require('../db');
+const pool = require("../db");
 
 // Function to create an article
 async function createArticle(title, content, userId) {
   return new Promise((resolve, reject) => {
     pool.query(
-      'INSERT INTO Articles (title, content, user_id) VALUES (?, ?, ?)',
+      "INSERT INTO articles (title, content, user_id) VALUES (?, ?, ?)",
       [title, content, userId],
       (err, results) => {
         if (err) {
@@ -20,7 +20,7 @@ async function createArticle(title, content, userId) {
 async function updateArticle(id, title, content) {
   return new Promise((resolve, reject) => {
     pool.query(
-      'UPDATE Articles SET title = ?, content = ? WHERE id = ?',
+      "UPDATE articles SET title = ?, content = ? WHERE id = ?",
       [title, content, id],
       (err, results) => {
         if (err) {
@@ -38,7 +38,7 @@ async function updateArticle(id, title, content) {
 // Function to delete an article
 async function deleteArticle(id) {
   return new Promise((resolve, reject) => {
-    pool.query('DELETE FROM Articles WHERE id = ?', [id], (err, results) => {
+    pool.query("DELETE FROM articles WHERE id = ?", [id], (err, results) => {
       if (err) {
         return reject(err);
       }
@@ -53,7 +53,7 @@ async function deleteArticle(id) {
 // Function to get all articles
 async function getAllArticles() {
   return new Promise((resolve, reject) => {
-    pool.query('SELECT * FROM Articles', (err, results) => {
+    pool.query("SELECT * FROM articles", (err, results) => {
       if (err) {
         return reject(err);
       }
@@ -65,7 +65,7 @@ async function getAllArticles() {
 // Function to get an article by ID
 async function getArticleById(id) {
   return new Promise((resolve, reject) => {
-    pool.query('SELECT * FROM Articles WHERE id = ?', [id], (err, results) => {
+    pool.query("SELECT * FROM articles WHERE id = ?", [id], (err, results) => {
       if (err) {
         return reject(err);
       }
@@ -81,7 +81,7 @@ async function getArticleById(id) {
 async function likeArticle(userId, articleId) {
   return new Promise((resolve, reject) => {
     pool.query(
-      'INSERT INTO Likes (user_id, article_id) VALUES (?, ?)',
+      "INSERT INTO Likes (user_id, article_id) VALUES (?, ?)",
       [userId, articleId],
       (err, results) => {
         if (err) {
@@ -98,6 +98,6 @@ module.exports = {
   updateArticle,
   deleteArticle,
   getAllArticles,
-  getArticleById, 
+  getArticleById,
   likeArticle,
 };
