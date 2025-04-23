@@ -27,10 +27,20 @@ const port = 3000;
 // Middleware to parse JSON bodies
 app.use(bodyParser.json());
 
-// Enable CORS for specific origin (fixes Swagger CORS issue)
+const allowedOrigins = [
+  "http://localhost:5173", // your local React frontend
+  "https://cricket-cms.up.railway.app", // Swagger UI hosted on Railway
+];
+
 app.use(
   cors({
-    origin: ["https://cricket-cms.up.railway.app"],
+    origin: function (origin, callback) {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
