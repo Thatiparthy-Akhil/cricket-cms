@@ -22,7 +22,7 @@ const pool = require("./db");
 
 // Create an Express app
 const app = express();
-const port = 3000;
+// const port = 3000;
 
 // Middleware to parse JSON bodies
 app.use(bodyParser.json());
@@ -285,8 +285,8 @@ app.post("/articles/:id/like", authenticateToken, async (req, res) => {
   }
 });
 
-app.listen(port, () => {
-  console.log(`Server running on http://localhost:${port}`);
-});
+// app.listen(port, () => {
+//   console.log(`Server running on http://localhost:${port}`);
+// });
 
 console.log("✅ Swagger loaded at /api-docs");
