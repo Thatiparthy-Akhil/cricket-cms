@@ -29,7 +29,7 @@ app.use(bodyParser.json());
 
 const allowedOrigins = [
   "http://localhost:5173", // your local React frontend
-  "https://cricket-cms.up.railway.app", // Swagger UI hosted on Railway
+  "https://cricket-cms-production.up.railway.app",
 ];
 
 app.use(
