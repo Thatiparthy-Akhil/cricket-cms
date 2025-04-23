@@ -5,7 +5,7 @@ info:
   version: 1.0.0
 
 servers:
-  - url: https://cricket-cms.up.railway.app
+  - url: https://cricket-cms-production.up.railway.app
 
 components:
   securitySchemes:
