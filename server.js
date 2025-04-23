@@ -17,7 +17,6 @@ const {
 } = require("./models/article");
 const authenticateToken = require("./middleware/auth");
 const checkAdmin = require("./middleware/checkAdmin");
-
 const pool = require("./db");
 
 // Create an Express app
@@ -25,10 +24,17 @@ const app = express();
 const port = 3000;
 
 // Middleware to parse JSON bodies
+// Middleware to parse JSON bodies
 app.use(bodyParser.json());
 
-// Enable CORS for all origins (for development purposes)
-app.use(cors());
+// Enable CORS for specific origin (fixes Swagger CORS issue)
+app.use(
+  cors({
+    origin: ["https://cricket-cms.up.railway.app"],
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true,
+  })
+);
 
 // Swagger UI setup
 const swaggerUi = require("swagger-ui-express");
