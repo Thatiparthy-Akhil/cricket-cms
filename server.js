@@ -302,7 +302,7 @@ app.post("/articles/:id/like", authenticateToken, async (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`Server running on http://localhost:${port}`);
+  console.log(`✅ Server running on port ${port}`);
 });
 
 console.log("✅ Swagger loaded at /api-docs");
