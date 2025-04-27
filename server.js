@@ -30,6 +30,7 @@ app.use(bodyParser.json());
 const allowedOrigins = [
   "http://localhost:5173", // your local React frontend
   "https://cricket-cms-production.up.railway.app",
+  "https://gray-cliff-08a709010.6.azurestaticapps.net",
 ];
 
 app.use(
