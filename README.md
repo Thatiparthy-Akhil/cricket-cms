@@ -3,6 +3,19 @@
 ## Overview
 This project is a Cricket CMS API that allows users to register, log in, view articles, fetch live cricket scores, and more.
 
+For Deployment i used Railway 
+link: https://cricket-cms-production.up.railway.app
+Swagger link: https://cricket-cms-production.up.railway.app/api-docs/
+
+![image](https://github.com/user-attachments/assets/c9e93c4f-731d-4980-bdb1-2790ca1e2b25)
+
+swagger:
+![image](https://github.com/user-attachments/assets/97b7cdad-2646-45d8-803d-502003449462)
+
+
+database deployment:
+![image](https://github.com/user-attachments/assets/fd8f9125-d631-4f1d-995d-a7bd1cd8b1a3)
+
 ## Setup Instructions
 
 ### Prerequisites
@@ -185,4 +198,10 @@ API Security: We need to deploy rate limiting as a security measure to stop deni
 v.	Future Improvements:
 Live Match Videos: Users should have the ability to access live cricket match videos streamed directly on the platform.
  User Chat: The platform must allow users to communicate with each other through live matches to enhance their real-time interaction.
+
+
+
+
+
+
 
