@@ -5,16 +5,28 @@ This project is a comprehensive Cricket Content Management System (CMS) API desi
 
 For Deployment I used Railway deployment:
 GitHub Link: https://github.com/Thatiparthy-Akhil/cricket-cms.git
+
+
 Deployment link: https://cricket-cms-production.up.railway.app
+
+
 Swagger Documentation: https://cricket-cms-production.up.railway.app/api-docs/
+
+
 I used Ultimate Cricket free API: 
 For Live Scores:
 https://api.cricapi.com/v1/currentMatches?apikey=1918ad5e-2eea-4641-a152-9af8df2644ba&offset=0
+
+
 For Players: 
 https://api.cricapi.com/v1/players?apikey=1918ad5e-2eea-4641-a152-9af8df2644ba&offset=0
+
+
 Graphql:
-i.	 http://localhost:3000/graphql
-ii.	https://studio.apollographql.com/sandbox/explorer
+i. http://localhost:3000/graphql
+ii.https://studio.apollographql.com/sandbox/explorer
+
+
 FRONTEND:
 
 For Frontend deployment I used Azure:
@@ -87,8 +99,7 @@ API Rate Limiting: The third-party cricket scores API enforces rate limits as a 
 
  
 
-
-	Security Considerations and Implementations
+Security Considerations and Implementations
  Authentication and Authorization: JWT: Using JSON Web Tokens (JWT) for secure authentication and authorization of users. The system will use role-based access control (RBAC) methodology for ensuring authorized endpoint access depends on user roles. 
 Data Encryption: The API protects data transmission through HTTPS which delivers encryption services. Users receive secure data protection through REST-based AES encryption for their data when it rests on system storage facilities. 
 
